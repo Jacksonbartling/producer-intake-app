@@ -1,9 +1,12 @@
+// (Partially Depricated)
 import { GoogleGenAI } from "@google/genai";
-import { FormData } from "../types";
+import { Form_Data } from "../types";
 
-export const generateOperationalNarrative = async (formData: FormData): Promise<string> => {
+export const generateOperationalNarrative = async (
+  formData: FormData,
+): Promise<string> => {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  
+
   const prompt = `
     Based on the following agricultural intake data, write a comprehensive and professional "Operational Story." 
     This narrative should synthesize the producer's management philosophy, operational history, conservation commitment, and future vision into a cohesive 3-4 paragraph review.
@@ -20,10 +23,11 @@ export const generateOperationalNarrative = async (formData: FormData): Promise<
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: "gemini-3-flash-preview",
       contents: prompt,
       config: {
-        systemInstruction: "You are an expert Senior Agricultural Program Planner. Your task is to transform raw intake data into a sophisticated 'Operational Story' that captures the nuance of a farming operation's management logic, legacy, and natural resource stewardship.",
+        systemInstruction:
+          "You are an expert Senior Agricultural Program Planner. Your task is to transform raw intake data into a sophisticated 'Operational Story' that captures the nuance of a farming operation's management logic, legacy, and natural resource stewardship.",
       },
     });
     return response.text || "Synthesis unavailable.";
