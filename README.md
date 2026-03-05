@@ -2,11 +2,11 @@
 
 ## Overview
 
-Ben sent me this working prototype of a Landowner Intake Application. The front-end looks great and works flawlessly, but some attention ought to be paid to the aesthetics and marketing. It should match our brand colors, use our logo, language, etc.
+Ben sent me this working prototype of a Producer Intake Application. The front-end looks great and works flawlessly, but some attention ought to be paid to the aesthetics and marketing. It should match our brand colors, use our logo, language, etc.
 
 However, the back-end, moreso, needs work. I, Jackson, have taken it upon myself to resolve most of the misalignments before passing it along to Harrison for direct integration into the product. Specifically, the schemata, API import (which should be Terra rather than generic Gemini), and other subtleties must be reworked.
 
-In all, this repository contains the frontend React prototype for the Operational Intake Framework, which itself encapsulates the brunt of the intake work that a landowner will undergo. This application is designed to capture the "story" of a farm through a guided, sequential workflow, enabling program planners to clarify what land use programs (regenerative ag, carbon markets, habitat restoration, recreation, among others) are most prudent for their operations.
+In all, this repository contains the frontend React prototype for the Operational Intake Framework, which itself encapsulates the brunt of the intake work that a producer will undergo. This application is designed to capture the "story" of a farm through a guided, sequential workflow, enabling program planners to clarify what land use programs (regenerative ag, carbon markets, habitat restoration, recreation, among others) are most prudent for their operations.
 
 The application captures elaborate, granular agricultural data across several domains:
 
