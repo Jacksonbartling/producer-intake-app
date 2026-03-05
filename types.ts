@@ -1,67 +1,71 @@
-export interface NutrientDetail {
-  splitFall: string;
-  splitSpring: string;
-  splitSeason: string;
-  methods: string[];
+export interface Nutrient_Detail {
+  Split_Fall: string;
+  Split_Spring: string;
+  Split_Season: string;
+  Methods: string[];
 }
 
-export interface FormData {
+export interface Form_Data {
   // Phase 1 (Foundation)
-  primaryCrops: string[];
-  rotationStory: string[];
-  historyChanged: string;
+  Primary_Crops: string[];
+  Rotation_Story: string[];
+  History_Changed: string;
 
   // Phase 2 (Soil/Water/Land Assets)
-  tillageApproach: string[];
-  tillageDepth: string[];
-  tillageHistory: string;
-  tillageReasoning: string;
-  coverCropRelationship: string[];
-  coverCropMix: string[];
-  coverCropExperience: string;
-  irrigationSetup: string[];
-  iwmStrategy: string[];
-  waterPainPoints: string;
+  Tillage_Strategy: string[];
+  Tillage_Depth: string[];
+  Tillage_History: string;
+  Tillage_Reasoning: string;
+  Cover_Crops_Relationship: string[];
+  Cover_Crop_Mix: string[];
+  Cover_Crop_Challenges: string;
+  Irrigation_Setup: string[];
+  IWM_Strategy: string[];
+  Water_Management_Experience: string;
   // NEW Land Assets
-  grasslandUse: string[];
-  grasslandHealth: string[];
-  timberStatus: string[];
-  timberHeadaches: string[];
-  waterManagementStrategy: string[];
+  Grassland_Utility: string[];
+  Grassland_Health: string[];
+  Timber_Strategy: string[];
+  Management_Challenges: string[];
+  Water_Infrastructure: string[];
 
   // Phase 3 (Nutrient)
-  nitrogenSource: string[];
-  nutrientDetails: Record<string, NutrientDetail>; // Keyed by source name
-  inputTech: string[];
-  inputTechExplanations: Record<string, string>; // Keyed by tech name
-  manureSource: string[];
-  protectionPasses: string[];
-  inputNotes: string;
+  Fertility_Nitrogen_Source: string[];
+  Nutrient_Details: Record<string, Nutrient_Detail>; // Keyed by source name
+  Input_Technology: string[];
+  Input_Tech_Explanations: Record<string, string>; // Keyed by tech name
+  Manure_Source: string[];
+  Protection_Passes: string[];
+  General_Input_Pass_Notes: string;
 
   // Phase 4 (Specialized)
-  livestockIntegration: string[];
-  livestockOperation: string[];
-  herdSize: string;
-  matureWeight: string;
-  breeds: string;
-  geneticsSource: string;
-  grazingMethod: string[];
-  livestockVision: string;
-  primaryMarket: string[];
-  marketingMethods: string[];
-  usesGrainMarketer: string;
-  onFarmStorage: string;
-  marketingStrategy: string;
+  Livestock_Integration: string[];
+  Operation_Type: string[];
+  Herd_Size: string;
+  Mature_Weight: string;
+  Breeds: string;
+  Genetics_Source: string;
+  Grazing_Method: string[];
+  Livestock_Vision: string;
+  Market_Sell_Locations: string[];
+  Sales_Methods: string[];
+  Uses_Grain_Marketer: string;
+  On_Farm_Storage: string;
+  Marketing_Strategy_Narrative: string;
 
   // Phase 5 (Strategy)
-  existingPrograms: string[];
-  priorities: string[];
-  fears: string[];
-  successionPlan: string[];
-  fiveYearVision: string;
-  hurdles: string;
-  recreationalActivities: string[];
+  Existing_Programs: string[];
+  Top_Priorities: string[];
+  Fears: string[];
+  Succession_Plan: string[];
+  Five_Year_Vision: string;
+  Hurdles: string;
+  Recreational_Activities: string[];
 }
+
+// Backwards-compatible aliases (old names) to ease migration.
+export type NutrientDetail = Nutrient_Detail;
+export type FormData = Form_Data;
 
 export enum Phase {
   Landing = 0,
@@ -72,5 +76,5 @@ export enum Phase {
   Specialized = 5,
   Strategy = 6,
   AIReview = 7,
-  Success = 8
+  Success = 8,
 }
